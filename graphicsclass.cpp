@@ -64,7 +64,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	}
 
 	// Initialize the model object.
-	result = m_Model->Initialize(m_D3D->GetDevice(), L"grass.dds");
+	result = m_Model->Initialize(m_D3D->GetDevice(), "cube.txt", L"grass.dds");
 	if(!result)
 	{
 		MessageBox(hwnd, L"Could not initialize the model object.", L"Error", MB_OK);
@@ -123,7 +123,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	}
 
 	// Initialize the light object.
-	m_Light->SetDiffuseColor(0.7f, 0.7f, 0.7f, 1.0f);
+	m_Light->SetDiffuseColor(1.0f, 1.0f, 1.0f, 1.0f);
 	m_Light->SetDirection(0.0f, 0.0f, 1.0f);
 
 	return true;
@@ -195,7 +195,7 @@ bool GraphicsClass::Frame()
 
 
 	// Update the rotation variable each frame.
-	rotation += (float)D3DX_PI * 1.5f;
+	rotation += (float)D3DX_PI * 0.02f;
 	if (rotation > 360.0f)
 	{
 		rotation -= 360.0f;

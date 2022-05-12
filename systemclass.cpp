@@ -202,7 +202,7 @@ void SystemClass::InitializeWindows(int& screenWidth, int& screenHeight)
 	wc.hInstance     = m_hinstance;
 	wc.hIcon		 = LoadIcon(NULL, IDI_WINLOGO);
 	wc.hIconSm       = wc.hIcon;
-	wc.hCursor       = LoadCursor(NULL, IDC_ARROW);
+	wc.hCursor		 = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	wc.lpszMenuName  = NULL;
 	wc.lpszClassName = m_applicationName;

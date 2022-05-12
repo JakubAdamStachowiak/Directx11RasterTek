@@ -10,10 +10,11 @@
 //////////////
 #include <d3d11.h>
 #include <d3dx10math.h>
+#include <fstream>
 
 #include "TextureClass.h"
 
-
+using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Class name: ModelClass
@@ -28,12 +29,18 @@ private:
 		D3DXVECTOR3 normal;
 	};
 
+	struct ModelType {
+		float x, y, z;
+		float tu, tv;
+		float nx, ny, nz;
+	};
+
 public:
 	ModelClass();
 	ModelClass(const ModelClass&);
 	~ModelClass();
 
-	bool Initialize(ID3D11Device*, CONST WCHAR* textureFilename);
+	bool Initialize(ID3D11Device*, CONST char*, CONST WCHAR* textureFilename);
 	void Shutdown();
 	void Render(ID3D11DeviceContext*);
 
@@ -49,11 +56,16 @@ private:
 	bool LoadTexture(ID3D11Device*, CONST WCHAR*);
 	void ReleaseTexture();
 
+	bool LoadModel(CONST char*);
+	void ReleaseModel();
+
 private:
 	ID3D11Buffer *m_vertexBuffer, *m_indexBuffer;
 	int m_vertexCount, m_indexCount;
 
 	TextureClass* m_Texture;
+
+	ModelType* m_model;
 };
 
 #endif

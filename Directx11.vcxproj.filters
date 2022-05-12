@@ -22,6 +22,9 @@
     <Filter Include="Pliki zasobów\Shaders\VertexShaders">
       <UniqueIdentifier>{7c13bbae-a961-43db-aa8f-f31d497d155a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki zasobów\Models">
+      <UniqueIdentifier>{43e7005c-a60c-4be3-adaf-e563574d5d96}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cameraclass.h">
@@ -115,5 +118,10 @@
     <None Include="Texture.vs">
       <Filter>Pliki zasobów\Shaders\VertexShaders</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="cube.txt">
+      <Filter>Pliki zasobów\Models</Filter>
+    </Text>
   </ItemGroup>
 </Project>
